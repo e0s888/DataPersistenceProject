@@ -8,7 +8,9 @@ public class PlayerDataHandle : MonoBehaviour
     //makes it accesible for scipts from other instances?
     //Static class for save the current player data
     //Singleton pattern
+    
     public string PlayerName;
+   
     public int Score;
 
     private void Awake()

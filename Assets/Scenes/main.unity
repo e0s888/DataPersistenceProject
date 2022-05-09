@@ -637,7 +637,7 @@ MonoBehaviour:
   Ball: {fileID: 177912862}
   ScoreText: {fileID: 188020406}
   CurrentPlayerName: {fileID: 2077166513}
-  BestPlayername: {fileID: 2078529056}
+  BestPlayerName: {fileID: 2078529056}
   GameOverText: {fileID: 474497238}
 --- !u!1 &455529321
 GameObject:
@@ -1640,7 +1640,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Name
+  m_Text: Name imported from PlayerDataHandle.Instance.PlayerName
 --- !u!222 &2077166514
 CanvasRenderer:
   m_ObjectHideFlags: 0
