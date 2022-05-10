@@ -24,8 +24,6 @@ public class MainManager : MonoBehaviour
     
     private bool m_GameOver = false;
 
-    public static MainManager Instance;
-
     //Best player static variables for holding the data - to show data beetwen sessions
     private static int BestScore;
     private static string BestPlayer;
@@ -41,7 +39,7 @@ public class MainManager : MonoBehaviour
         const float step = 0.6f;
         int perLine = Mathf.FloorToInt(4.0f / step);
         
-        int[] pointCountArray = new [] {2,2,4,4,5,5};
+        int[] pointCountArray = new [] {4,4,8,8,10,10};
         for (int i = 0; i < LineCount; ++i)
         {
             for (int x = 0; x < perLine; ++x)
@@ -123,11 +121,19 @@ public class MainManager : MonoBehaviour
             BestPlayerName.text = $"Best Score - {BestPlayer}: {BestScore}";
         }
     }
-    public void SaveGameRank(string bestPlaterName, int bestPlayerScore)
+
+    [System.Serializable]
+    class SaveData
+    {
+        public int HighiestScore;
+        public string TheBestPlayer;
+    }
+
+    public void SaveGameRank(string bestPlayerName, int bestPlayerScore)
     {
         SaveData data = new SaveData();
 
-        data.TheBestPlayer = bestPlaterName;
+        data.TheBestPlayer = bestPlayerName;
         data.HighiestScore = bestPlayerScore;
 
         string json = JsonUtility.ToJson(data);
@@ -146,12 +152,5 @@ public class MainManager : MonoBehaviour
             BestPlayer = data.TheBestPlayer;
             BestScore = data.HighiestScore;
         }
-    }
-
-    [System.Serializable]
-    class SaveData
-    {
-        public int HighiestScore;
-        public string TheBestPlayer;
     }
 }

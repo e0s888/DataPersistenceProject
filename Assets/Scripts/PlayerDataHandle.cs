@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlayerDataHandle : MonoBehaviour
 {
     public static PlayerDataHandle Instance;
-    //makes it accesible for scipts from other instances?
+    //makes it accesible for scipts from other instances
     //Static class for save the current player data
-    //Singleton pattern
+    //Singleton pattern - only a singnle instance of PlayerDataHandle (or Main manager in course) can ever exist
     
     public string PlayerName;
    
